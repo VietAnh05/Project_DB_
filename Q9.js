@@ -1,13 +1,8 @@
 (() => {    
     const width = 500, height = 300, margin = { top: 40, right: 150, bottom: 50, left: 150 };
 
-    document.addEventListener("DOMContentLoaded", () => {
-        if (!Array.isArray(data) || data.length === 0) {
-            console.error("Dữ liệu trống!");
-            return;
-        }
-
-        console.log("Dữ liệu đã load:", data);
+d3.csv("data_ggsheet.csv").then(function(data) {
+    console.log("Dữ liệu đã load:", data);
 
         // Bước 1: Xử lý dữ liệu Nhóm hàng - Mặt hàng
         const data9 = data.map(d => ({
