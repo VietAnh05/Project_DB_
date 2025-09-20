@@ -1,10 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-    if (typeof window.data === "undefined" || !Array.isArray(window.data) || window.data.length === 0) {
-        console.error("Dữ liệu chưa được load hoặc rỗng!");
-        return;
-    }
-
-    console.log("Dữ liệu đã load:", window.data);
+d3.csv("data_ggsheet.csv").then(function(data) {
+    console.log("Dữ liệu đã load:", data);
 
     const margin = { top: 40, right: 40, bottom: 80, left: 50 },
         width = 900,
