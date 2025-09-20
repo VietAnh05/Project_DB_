@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-    if (!window.data || !Array.isArray(window.data) || window.data.length === 0) {
-        console.error("Dữ liệu chưa được load hoặc rỗng!");
-        return;
-    }
-
-    console.log("Dữ liệu đã load:", window.data);
+d3.csv("data_ggsheet.csv").then(function(data) {
+  // Chuẩn hóa dữ liệu
+    data.forEach(d => {
+        d.SL = +d["SL"];
+        d.DonGia = +d["Đơn giá"];
+        d.DoanhThu = d.SL * d.DonGia;
+  });
 
     const margin = { top: 40, right: 200, bottom: 50, left: 250 },
         width = 700,
