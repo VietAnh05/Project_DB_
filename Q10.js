@@ -1,10 +1,8 @@
 (() => {    
     const width = 500, height = 300, margin = { top: 40, right: 100, bottom: 50, left: 100 };
 
-    document.addEventListener("DOMContentLoaded", () => {
-        if (!Array.isArray(data) || data.length === 0) return console.error("Dữ liệu trống!");
-
-        console.log("Dữ liệu đã load:", data);
+d3.csv("data_ggsheet.csv").then(function(data) {
+    console.log("Dữ liệu đã load:", data);
 
         const data_processed = data.map(d => ({
             "Tháng": `T ${d["Thời gian tạo đơn"].split("-")[1]}`,
